@@ -19,6 +19,10 @@ app.use("/api/items", itemRoutes);
 
 const PORT = process.env.PORT || 5000;
 
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
