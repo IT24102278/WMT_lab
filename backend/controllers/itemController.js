@@ -24,6 +24,9 @@ export const getItemById = async (req, res) => {
 };
 
 export const createItem = async (req, res) => {
+  // 👇 ADD THE TRIPWIRE RIGHT HERE 👇
+    console.log("=== SOMEONE CLICKED ADD ITEM ===");
+    console.log("Data received from Vercel:", req.body);
   try {
     const newItem = await Item.create(req.body);
     res.status(201).json(newItem);
